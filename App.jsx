@@ -1,5 +1,5 @@
 import React from "react"
-
+import clsx from "clsx";
 import Header from "./Header"
 import {languages} from "./languages.js"
 
@@ -21,22 +21,40 @@ export default function AssemblyEndgame() {
     )
 
  const [currentWord,setcurrentWord]=React.useState("React")
+  const [guessedLetters,setGuessedLetters]=React.useState([])
 const  currentWordArr=[...currentWord]
 const currentletter=currentWordArr.map(
     (letter,index)=>(
-        <span key={index}>{letter.toUpperCase()}</span>
+        <span key={index}>{
+           guessedLetters.includes(letter)?letter.toUpperCase():""}</span>
     )
 )
    const alphabet = "abcdefghijklmnopqrstuvwxyz"
    const alphabetArr=[...alphabet]
    const keyboard=alphabetArr.map(
-    (letter,index)=>(
-        <button key={index}
-         onClick={()=>addGuessedLetter(letter)}>{letter.toUpperCase()}</button>
-    )
-   )
+    (letter,index)=>
+        {
+        const isGuessed= guessedLetters.includes(letter)
+        const isCorrect= isGuessed && currentWord.includes(letter)
+        const isWrong= isGuessed && !currentWord.includes(letter)
+        const className=clsx(
+            {
+                correct:isCorrect
+                ,wrong:isWrong
+            }
+        )  
+     return(
+   <button
+   className={className}
+   key={index}
+    onClick={()=>addGuessedLetter(letter)}>
+    {letter.toUpperCase()}</button>
+    
+        )})
+     
+   
 
- const [guessedLetters,setGuessedLetters]=React.useState([])
+
  function addGuessedLetter(letter){
     setGuessedLetters(
 

@@ -53,7 +53,7 @@ section.language-chips{
     justify-content: center;
     max-width: 350px;
     margin-bottom: 36px;
-    /* align-items: center; */
+ 
 }
 
 span.chip {
@@ -96,6 +96,13 @@ section.keyboard > button {
     cursor: pointer;
 }
 
+section.keyboard > button.correct {
+    background-color: #10A95B;
+}
+
+section.keyboard > button.wrong {
+    background-color: #EC5D49;
+}
 button.new-game {
     background-color: #11B5E5;
     border: 1px solid #D7D7D7;

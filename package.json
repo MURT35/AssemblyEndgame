@@ -1,12 +1,13 @@
 {
   "name": "project",
   "dependencies": {
+    "clsx": "^2.1.1",
     "react": "19.0.0-rc-a99d8e8d-20240916",
     "react-dom": "19.0.0-rc-a99d8e8d-20240916"
   },
   "devDependencies": {
-    "vite": "latest",
-    "@vitejs/plugin-react": "*"
+    "@vitejs/plugin-react": "*",
+    "vite": "latest"
   },
   "scripts": {
     "start": "vite",
