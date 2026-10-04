@@ -4,24 +4,11 @@ import Header from "./Header"
 import {languages} from "./languages.js"
 
 export default function AssemblyEndgame() {
-    const langEle=languages.map(
-        lang => {
-        const styles={
-            backgroundColor:lang.backgroundColor,
-            color:lang.color
-        }
-          return(
-            <span 
-            key={lang.name}
-            style={styles}
-            className="chip"
-            >{lang.name}</span>
-          )
-        }
-    )
+ 
 
- const [currentWord,setcurrentWord]=React.useState("React")
-  const [guessedLetters,setGuessedLetters]=React.useState([])
+const [currentWord,setcurrentWord]=React.useState("React")
+
+const [guessedLetters,setGuessedLetters]=React.useState([])
 const  currentWordArr=[...currentWord]
 const currentletter=currentWordArr.map(
     (letter,index)=>(
@@ -29,6 +16,10 @@ const currentletter=currentWordArr.map(
            guessedLetters.includes(letter)?letter.toUpperCase():""}</span>
     )
 )
+const wrongGuessCount = 
+        guessedLetters.filter(letter => !currentWord.includes(letter)).length
+
+  
    const alphabet = "abcdefghijklmnopqrstuvwxyz"
    const alphabetArr=[...alphabet]
    const keyboard=alphabetArr.map(
@@ -64,7 +55,43 @@ const currentletter=currentWordArr.map(
     )
 
  }
- console.log(guessedLetters)
+
+
+
+    // const languageElements = languages.map((lang, index) => {
+    //     const isLanguageLost = index < wrongGuessCount
+    //     const styles = {
+    //         backgroundColor: lang.backgroundColor,
+    //         color: lang.color
+    //     }
+    //     const className = clsx("chip", isLanguageLost && "lost")
+    //     return (
+    //         <span
+    //             className={`chip ${isLanguageLost ? "lost" : ""}`}
+    //             style={styles}
+    //             key={lang.name}
+    //         >
+    //             {lang.name}
+    //         </span>
+    //     )
+    // })
+  const langEle=languages.map(
+       (lang,index) => {
+        const styles={
+            backgroundColor:lang.backgroundColor,
+            color:lang.color
+        }
+        const isLanguageLost=index < wrongGuessCount
+        const className=clsx("chip",isLanguageLost && "lost")
+          return(
+            <span 
+            key={lang.name}
+            style={styles}
+            className={className}
+            >{lang.name}</span>
+          )
+        }
+    )
 
     return (
         <main>

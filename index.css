@@ -59,6 +59,22 @@ section.language-chips{
 span.chip {
     border-radius: 3px;
     padding: 4.5px;
+    position: relative;
+}
+
+/* Dimmed overlay with skull on "lost" languages */
+span.chip.lost::before {
+    content: "\1F480";
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    font-size: 0.85rem;
+    line-height: 1;
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 section.word{
     display: flex;
