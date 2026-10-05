@@ -4,9 +4,7 @@ A browser word-guessing game. Guess the hidden word before Assembly takes over t
 
 ## Live demo
 
-Play it here: **paste your Netlify URL**
-
-Example: `https://your-site-name.netlify.app`
+try it:"https://assemblyendgamee.netlify.app/"
 
 ## How to play
 
