@@ -48,36 +48,4 @@ Languages fall in this order: HTML, CSS, JavaScript, React, TypeScript, Node.js,
 | `utils.js` | Random word picker and farewell messages |
 | `index.css` | Layout and game styles |
 
-## Run it locally
 
-You need Node.js installed.
-
-```bash
-npm install
-npm run dev
-```
-
-Open the local URL Vite prints in the terminal (usually `http://localhost:5173`).
-
-Other scripts:
-
-```bash
-npm run build     # production build in dist/
-npm run preview   # serve the production build locally
-```
-
-## Deploy on Netlify
-
-1. Push this project to a Git host (GitHub, GitLab, or Bitbucket).
-2. In [Netlify](https://app.netlify.com/), choose **Add new site** → **Import an existing project**.
-3. Pick the repository.
-4. Use these build settings:
-
-   | Setting | Value |
-   | --- | --- |
-   | Build command | `npm run build` |
-   | Publish directory | `dist` |
-
-5. Deploy the site.
-6. Copy the site URL Netlify gives you (it looks like `https://something.netlify.app`).
-7. Paste that URL into the **Live demo** section at the top of this file.
